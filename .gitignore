@@ -1,6 +1,8 @@
-node_modules/
+blogr-nextjs-prisma/node_modules/
 .next/
 .DS_STORE
 .env
 yarn.lock
 package-lock.json
+.idea/
+../.idea/
