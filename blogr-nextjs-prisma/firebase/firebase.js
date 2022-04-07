@@ -1,5 +1,6 @@
 import { getApps, initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import {getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,10 +13,14 @@ const firebaseConfig = {
 };
 
 if (!getApps.length) {
-	initializeApp(firebaseConfig);
+	const app = initializeApp(firebaseConfig);
+	const db = getFirestore(app);
 	if (typeof window !== "undefined") {
 		if ("measurementId" in firebaseConfig) {
 			getAnalytics();
 		}
 	}
 }
+
+export default db;
+

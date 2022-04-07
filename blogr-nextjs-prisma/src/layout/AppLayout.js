@@ -4,7 +4,6 @@ import useAuth from "../hook/auth";
 
 export default function AppLayout({ children }) {
 	const auth = useAuth();
-
 	const router = useRouter();
 
 	if (router.pathname !== "/login") {
@@ -19,7 +18,7 @@ export default function AppLayout({ children }) {
 						justifyContent: "space-between",
 					}}
 				>
-					<span>This is default layout</span>
+					<span>Wordle With Friends</span>
 					<span>{auth.user?.displayName}</span>
 				</nav>
 				{children}

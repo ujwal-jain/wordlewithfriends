@@ -1,4 +1,5 @@
 import { getApp } from "firebase/app";
+
 import {
 	signInWithPopup,
 	getAuth,
@@ -31,6 +32,7 @@ class AuthService {
 				};
 			});
 	}
+
 	async logout() {
 		await signOut(this.auth);
 	}
